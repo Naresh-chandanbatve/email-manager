@@ -1,22 +1,34 @@
 "use client" 
 import React from "react";
 import {signOut,signIn, useSession} from 'next-auth/react';
+import Image from "next/image";
 import { redirect } from "next/navigation";
-
+import {Button} from "@nextui-org/button";
+import { IoMdLogOut } from "react-icons/io";
 
 const SigninButton = () => {
    const { data: session, status} = useSession();
+
+  //  const [isLoading, setIsLoading] = useState();
+   
+   const handleSignOut = () => {
+    console.log("sign out");
+     signOut(); 
+    redirect('/');
+  };
   
 
    if (status === 'loading') return <div>Loading...</div>;
 
    if(session && session.user){
     return(
-        <div className="flex gap-4 ml-auto">
-        <p className=" text-sky-500" >
-        {session.user.name}
-        </p>
-        <button onClick={()=>{signOut(); redirect('/')}} className="text-red-600"> sign out</button>
+        <div className="flex flex-row justify-between">
+        <div className=" flex flex-row justify-between gap-2" >
+         <Image src={session.user.image} alt="gmail_photo" width={50} height={50} className="rounded-full"/> 
+        <div className=" gap-0"> <p>{session.user.name}</p><p>{session.user.email}</p>
+        </div>
+        </div>
+        <Button variant="bordered" onClick={handleSignOut} className="flex flex-row justify-between items-center border-2 rounded-xl py-0"><IoMdLogOut size={20} /> sign out</Button>
         </div>
     )
   }

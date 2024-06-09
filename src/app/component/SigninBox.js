@@ -2,6 +2,7 @@
 import React, {useState} from "react";
 import {signIn} from 'next-auth/react';
 
+
 const SigninBox = () => {
    
   const [inputValue, setInputValue] = useState("");
@@ -13,7 +14,7 @@ const handleSubmit = async (e) => {
     if(input.length>0){
         localStorage.setItem("openapitoken", input);
     }
-    await signIn('google', { callbackUrl: `${process.env.APP_DOMAIN}/home`, scope: 'openid profile email' }); // Or handle login logic differently
+    await signIn('google', { callbackUrl: `${process.env.NEXT_PUBLIC_APP_DOMAIN}/home`, scope: 'openid profile email' }); // Or handle login logic differently
 
   };
 
