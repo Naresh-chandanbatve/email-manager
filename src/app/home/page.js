@@ -22,11 +22,11 @@ export default function Home() {
 
 
       try {
-        const response = await axios.get(`http://localhost:3000/api/mail/list/${session.user.email}/${maxResults}`);
+        const response = await axios.get(`https://email-manager-pi.vercel.app/api/mail/list/${session.user.email}/${maxResults}`);
         const fetchedThreads = response.data.map( async (thread) => {
             // Assuming the API now includes the sender in the response:
               
-          const sender = await axios.get(`http://localhost:3000/api/mail/thread/${session.user.email}/${thread.id}`);
+          const sender = await axios.get(`https://email-manager-pi.vercel.app/api/mail/thread/${session.user.email}/${thread.id}`);
             
         console.log(sender.data);
             return { ...thread, sender: sender.data || 'Unknown Sender' }; // Handle potential missing sender data
