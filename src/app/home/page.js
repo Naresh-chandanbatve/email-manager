@@ -2,7 +2,7 @@
 import SigninButton from "@/app/component/SigninButton";
 import axios from "axios";
 import { useEffect, useState } from 'react';
-import { signOut, signIn, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 
 export default function Home() {
   const [threads, setThreads] = useState([]);
@@ -10,26 +10,25 @@ export default function Home() {
   const { data: session, status } = useSession();
 
   const handleNumberChange = (event) => {
-    setMaxResults(parseInt(event.target.value)); // Update state with selected number
+    setMaxResults(parseInt(event.target.value)); 
   };
 
   useEffect(() => {
     const fetchThreads = async () => {
       if (!session || !session.user) {
-        return; // Exit early if no session or user data
+        return; 
       }
 
 
-
+process.env.APP_DOMAIN
       try {
-        const response = await axios.get(`https://email-manager-pi.vercel.app/api/mail/list/${session.user.email}/${maxResults}`);
+        const response = await axios.get(`${process.env.APP_DOMAIN}/api/mail/list/${session.user.email}/${maxResults}`);
         const fetchedThreads = response.data.map( async (thread) => {
-            // Assuming the API now includes the sender in the response:
               
-          const sender = await axios.get(`https://email-manager-pi.vercel.app/api/mail/thread/${session.user.email}/${thread.id}`);
+          const sender = await axios.get(`${process.env.APP_DOMAIN}/api/mail/thread/${session.user.email}/${thread.id}`);
             
         console.log(sender.data);
-            return { ...thread, sender: sender.data || 'Unknown Sender' }; // Handle potential missing sender data
+            return { ...thread, sender: sender.data || 'Unknown Sender' }; 
           });
 
   const resolvedThreads = await Promise.all(fetchedThreads);
@@ -41,17 +40,17 @@ export default function Home() {
     };
 
     fetchThreads();
-  }, [maxResults]); // Dependency array to re-run on session changes
+  }, [maxResults]); 
 
   if (status === "loading") {
-    return <div>Loading threads...</div>;
+    return <div>Loading emails...</div>;
   }
 
   if (status === "unauthenticated") {
-    return <p>Please sign in to view threads.</p>;
+    return <p>Please sign in to view emails.</p>;
   }
 
-  // Code to render threads if session is authenticated
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <SigninButton />

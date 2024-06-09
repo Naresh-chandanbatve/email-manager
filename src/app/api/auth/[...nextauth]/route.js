@@ -14,7 +14,6 @@ const authOptions = NextAuth({
             },
           }
         }),
-        // ...add more providers here
       ],
       callbacks: {
          async signIn(){
@@ -22,30 +21,7 @@ const authOptions = NextAuth({
          },
       },
 
-    //     async signIn({ user, account }) {
-    
-    //         if (account && account.provider === "google") {
-    //             await connect();
-    //             try {
-    //                 const existingUser = await User.findOne({ email: user.email });
-    //                 if (!existingUser) {
-    //                     const newUser = new User({
-    //                         email: user.email,
-    //                     });
-    
-    //                     await newUser.save();
-    //                     return true;
-    //                 }
-    //                 return true;
-    //             } catch (err) {
-    //                 console.log("Error saving user", err);
-    //                 return false;
-    //             }
-    //         }
-    //     },
-    // }
     
   });
   
-//   export const handler = NextAuth(authOptions);
   export { authOptions as GET, authOptions as POST };
