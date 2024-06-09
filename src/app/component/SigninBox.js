@@ -25,7 +25,7 @@ const handleSubmit = async (e) => {
         localStorage.setItem("openapitoken", input);
     }
     // Additional logic for sign in using input, e.g., custom username/email
-    await signIn('google', { callbackUrl: 'http://localhost:3000/home'}); // Or handle login logic differently
+    await signIn('google', { callbackUrl: 'https://email-manager-pi.vercel.app/home'}); // Or handle login logic differently
 
     // setInputValue(""); // Reset input value (optional)
     // setSubmitted(true); // Mark form submitted (optional)

@@ -19,7 +19,7 @@ const SigninButton = () => {
         </div>
     )
   }
-  return <button onClick={async()=>{await signIn('google', { callbackUrl: 'http://localhost:3000/home', scope: 'openid profile email'  });}} className="text-green-600 ml-auto"> sign in </button>
+  return <button onClick={async()=>{await signIn('google', { callbackUrl: 'https://email-manager-pi.vercel.app/home', scope: 'openid profile email'  });}} className="text-green-600 ml-auto"> sign in </button>
 }
 
 export default SigninButton;
