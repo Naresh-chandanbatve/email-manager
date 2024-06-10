@@ -1,5 +1,5 @@
 import axios from "axios";
-import {createConfig} from '../../../../utils';
+import {createConfig} from '../../../../libs/utils';
 import { google } from "googleapis";
 
 const oAuth2Client = new google.auth.OAuth2(

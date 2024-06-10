@@ -3,14 +3,15 @@ import SigninButton from "@/app/component/SigninButton";
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
-import { useStyleRegistry } from "styled-jsx";
 import { redirect } from "next/navigation";
+import { useLoadingStore } from "../libs/store";
 
 export default function Home() {
   const [threads, setThreads] = useState([]);
   const [maxResults, setMaxResults] = useState(100);
   const { data: session, status } = useSession();
-  const [isLoading, setIsLoading] = useState();
+  // const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useLoadingStore();
 
   const handleNumberChange = (event) => {
     setMaxResults(parseInt(event.target.value)); 

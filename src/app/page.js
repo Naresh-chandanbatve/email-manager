@@ -9,7 +9,7 @@ export default function Home() {
        
        <div className=" bg-[#0e0e1a] p-20 rounded-3xl">
         <p className="mb-6 text-slate-300 text-xl">
-          Let's classify the <br/> Avalanche of your Emails
+          Let&apos;s classify the <br/> Avalanche of your Emails
         </p>
        <Image src={gmail} alt="gmail logo" width={300} className="mb-14"/>
        <SigninBox className="mb-12"/>
