@@ -5,14 +5,16 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import {Button} from "@nextui-org/button";
 import { IoMdLogOut } from "react-icons/io";
+import { useLoadingStore } from "../libs/store";
 
 const SigninButton = () => {
    const { data: session, status} = useSession();
 
-  //  const [isLoading, setIsLoading] = useState();
+   const {isLoading, setIsLoading} = useLoadingStore();
    
    const handleSignOut = () => {
     console.log("sign out");
+      setIsLoading(true);
      signOut(); 
     redirect('/');
   };

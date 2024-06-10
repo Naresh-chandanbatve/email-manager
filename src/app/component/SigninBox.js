@@ -1,14 +1,15 @@
 "use client" 
 import React, {useState} from "react";
 import {signIn} from 'next-auth/react';
-
+import { useLoadingStore } from "./../libs/store";
 
 const SigninBox = () => {
    
   const [inputValue, setInputValue] = useState("");
-  
+  const {isLoading, setIsLoading} = useLoadingStore();
 
 const handleSubmit = async (e) => {
+    setIsLoading(true)
     e.preventDefault();
     const input = inputValue.trim(); 
     if(input.length>0){

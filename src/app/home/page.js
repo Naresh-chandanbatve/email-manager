@@ -4,22 +4,25 @@ import axios from "axios";
 import { useEffect, useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { redirect } from "next/navigation";
+import load from "../../../public/load.gif";
+import Image from "next/image";
 import { useLoadingStore } from "../libs/store";
 
 export default function Home() {
   const [threads, setThreads] = useState([]);
-  const [maxResults, setMaxResults] = useState(100);
+  const [maxResults, setMaxResults] = useState(10);
   const { data: session, status } = useSession();
   // const [isLoading, setIsLoading] = useState();
-  const [isLoading, setIsLoading] = useLoadingStore();
+  const {isLoading, setIsLoading} = useLoadingStore();
 
   const handleNumberChange = (event) => {
     setMaxResults(parseInt(event.target.value)); 
   };
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchThreads = async () => {
-      setIsLoading(true);
+      
       if (!session || !session.user) {
         return; 
       }
@@ -45,10 +48,10 @@ export default function Home() {
     };
 
     fetchThreads();
-  }, [session, maxResults]); 
+  }, [status, maxResults]); 
 
   if (status === "loading") {
-    return <div>Loading emails...</div>;
+    return <div className="my-10 mx-auto flex flex-col items-center"><Image src={load} width={150}/></div>;
   }
 
   if (status === "unauthenticated") {
@@ -82,7 +85,7 @@ export default function Home() {
           </li>
         ))}
       </ul>:
-       <div className="my-10 mx-auto">collecting all your emails...</div> 
+       <div className="my-10 mx-auto flex flex-col items-center"><Image src={load} width={150}/></div> 
 }
       </div>
 
