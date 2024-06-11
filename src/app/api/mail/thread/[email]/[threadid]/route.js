@@ -18,12 +18,13 @@ oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
 
 export async function GET(Request, { params }) {
     try {
-        const url = `https://gmail.googleapis.com/gmail/v1/users/${params.email}/threads/${params.threadid}`;
+        const url = `https://gmail.googleapis.com/gmail/v1/users/${params.email}/messages/${params.threadid}`;
         const {token} = await oAuth2Client.getAccessToken();
         const config = createConfig(url, token);
         const response = await axios(config);
-
-       return new Response(response.data.messages[0].payload.headers.find(header => header.name === "From")?.value);        
+        console.log(response.data)
+        return new Response(JSON.stringify(response.data)); 
+    //    return new Response(response.data.payload.headers.find(header => header.name === "From")?.value);        
     } catch (error) {
         console.log(error);
         return new Response(JSON.stringify({ message: error.message }), { status: 500 });
