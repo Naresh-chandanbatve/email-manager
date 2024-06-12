@@ -52,7 +52,7 @@ export default function Home() {
   }, [selectedThreadId]);
 
   useEffect(() => {
-    setIsLoading(true);
+    // setIsLoading(true);
     const fetchThreads = async () => {
       
       if (!session || !session.user) {
@@ -77,7 +77,7 @@ export default function Home() {
         console.error(error);
       }
       finally{
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     };
 
@@ -89,7 +89,6 @@ export default function Home() {
   }
 
   if (status === "unauthenticated") {
-    setIsLoading(false)
      redirect('/');
   }
 
