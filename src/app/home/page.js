@@ -52,13 +52,14 @@ export default function Home() {
   }, [selectedThreadId]);
 
   useEffect(() => {
-    // setIsLoading(true);
+
     const fetchThreads = async () => {
       
       if (!session || !session.user) {
         return; 
       }
       try {
+        setIsLoading(true);
         const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/api/mail/list/${session.user.email}/${maxResults}`);
            
         const fetchedThreads = response.data.messages.map( async (message) => {
@@ -77,7 +78,7 @@ export default function Home() {
         console.error(error);
       }
       finally{
-        // setIsLoading(false);
+        setIsLoading(false);
       }
     };
 
