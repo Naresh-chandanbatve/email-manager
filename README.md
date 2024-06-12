@@ -9,44 +9,44 @@ Maybe you can mention me or this repo in the acknowledgements too
 -->
 <div align="center">
 
-  <img src="assets/logo.png" alt="logo" width="200" height="auto" />
-  <h1>Awesome Readme Template</h1>
+  <img src="assets/logosV2/logo.png" alt="logo" width="200" height="auto" />
+  <h1>Email Manager</h1>
   
   <p>
-    An awesome README template for your projects! 
+    An awsome website to mannage all your emails 
   </p>
   
   
 <!-- Badges -->
 <p>
-  <a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-    <img src="https://img.shields.io/github/contributors/Louis3797/awesome-readme-template" alt="contributors" />
+  <a href="https://github.com/Naresh-chandanbatve/email-manager/graphs/contributors">
+    <img src="https://img.shields.io/github/contributors/Naresh-chandanbatve/email-manager" alt="contributors" />
   </a>
   <a href="">
-    <img src="https://img.shields.io/github/last-commit/Louis3797/awesome-readme-template" alt="last update" />
+    <img src="https://img.shields.io/github/last-commit/Naresh-chandanbatve/email-manager" alt="last update" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/network/members">
-    <img src="https://img.shields.io/github/forks/Louis3797/awesome-readme-template" alt="forks" />
+  <a href="https://github.com/Naresh-chandanbatve/email-manager/network/members">
+    <img src="https://img.shields.io/github/forks/Naresh-chandanbatve/email-manager" alt="forks" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/stargazers">
-    <img src="https://img.shields.io/github/stars/Louis3797/awesome-readme-template" alt="stars" />
+  <a href="https://github.com/Naresh-chandanbatve/email-manager/stargazers">
+    <img src="https://img.shields.io/github/stars/Naresh-chandanbatve/email-manager" alt="stars" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/issues/">
-    <img src="https://img.shields.io/github/issues/Louis3797/awesome-readme-template" alt="open issues" />
+  <a href="https://github.com/Naresh-chandanbatve/email-manager/issues/">
+    <img src="https://img.shields.io/github/issues/Naresh-chandanbatve/email-manager" alt="open issues" />
   </a>
-  <a href="https://github.com/Louis3797/awesome-readme-template/blob/master/LICENSE">
+  <a href="https://github.com/Naresh-chandanbatve/email-manager/blob/master/LICENSE">
     <img src="https://img.shields.io/github/license/Louis3797/awesome-readme-template.svg" alt="license" />
   </a>
 </p>
    
 <h4>
-    <a href="https://github.com/Louis3797/awesome-readme-template/">View Demo</a>
+    <a href="https://github.com/Naresh-chandanbatve/email-manager/">View Demo</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template">Documentation</a>
+    <a href="https://github.com/Naresh-chandanbatve/email-manager">Documentation</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Report Bug</a>
+    <a href="https://github.com/Naresh-chandanbatve/email-manager/issues/">Report Bug</a>
   <span> · </span>
-    <a href="https://github.com/Louis3797/awesome-readme-template/issues/">Request Feature</a>
+    <a href="https://github.com/Naresh-chandanbatve/email-manager/issues/">Request Feature</a>
   </h4>
 </div>
 
@@ -60,22 +60,15 @@ Maybe you can mention me or this repo in the acknowledgements too
     - [:camera: Screenshots](#camera-screenshots)
     - [:space\_invader: Tech Stack](#space_invader-tech-stack)
     - [:dart: Features](#dart-features)
-    - [:art: Color Reference](#art-color-reference)
     - [:key: Environment Variables](#key-environment-variables)
   - [:toolbox: Getting Started](#toolbox-getting-started)
-    - [:bangbang: Prerequisites](#bangbang-prerequisites)
-    - [:gear: Installation](#gear-installation)
-    - [:test\_tube: Running Tests](#test_tube-running-tests)
     - [:running: Run Locally](#running-run-locally)
-    - [:triangular\_flag\_on\_post: Deployment](#triangular_flag_on_post-deployment)
   - [:eyes: Usage](#eyes-usage)
-  - [:compass: Roadmap](#compass-roadmap)
   - [:wave: Contributing](#wave-contributing)
     - [:scroll: Code of Conduct](#scroll-code-of-conduct)
   - [:grey\_question: FAQ](#grey_question-faq)
   - [:warning: License](#warning-license)
   - [:handshake: Contact](#handshake-contact)
-  - [:gem: Acknowledgements](#gem-acknowledgements)
 
   
 
@@ -97,7 +90,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
+    <li><a href="https://www.typescriptlang.org/">JavaScript</a></li>
     <li><a href="https://nextjs.org/">Next.js</a></li>
     <li><a href="https://reactjs.org/">React.js</a></li>
     <li><a href="https://tailwindcss.com/">TailwindCSS</a></li>
@@ -107,45 +100,37 @@ Maybe you can mention me or this repo in the acknowledgements too
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-    <li><a href="https://go.dev/">Golang</a></li>
-    <li><a href="https://nestjs.com/">Nest.js</a></li>
-    <li><a href="https://socket.io/">SocketIO</a></li>
-    <li><a href="https://www.prisma.io/">Prisma</a></li>    
-    <li><a href="https://www.apollographql.com/">Apollo</a></li>
-    <li><a href="https://graphql.org/">GraphQL</a></li>
+    <li><a href="https://www.typescriptlang.org/">JavaScript</a></li>
+    <li><a href="https://nextjs.com/">Next.js</a></li>
   </ul>
 </details>
-
+<!-- 
 <details>
 <summary>Database</summary>
   <ul>
-    <li><a href="https://www.mysql.com/">MySQL</a></li>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-    <li><a href="https://redis.io/">Redis</a></li>
-    <li><a href="https://neo4j.com/">Neo4j</a></li>
     <li><a href="https://www.mongodb.com/">MongoDB</a></li>
   </ul>
-</details>
+</details> -->
 
 <details>
 <summary>DevOps</summary>
   <ul>
     <li><a href="https://www.docker.com/">Docker</a></li>
     <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">CircleCLI</a></li>
+    <li><a href="https://circleci.com/">erraform</a></li>
   </ul>
 </details>
 
 <!-- Features -->
 ### :dart: Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Secure google sign in with NextAuth
+- Fetching all your emails
+- Classifying emails in different catagories (pending)
+  
+  
 
-<!-- Color Reference -->
+<!-- Color Reference
 ### :art: Color Reference
 
 | Color             | Hex                                                                |
@@ -153,7 +138,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 | Primary Color | ![#222831](https://via.placeholder.com/10/222831?text=+) #222831 |
 | Secondary Color | ![#393E46](https://via.placeholder.com/10/393E46?text=+) #393E46 |
 | Accent Color | ![#00ADB5](https://via.placeholder.com/10/00ADB5?text=+) #00ADB5 |
-| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE |
+| Text Color | ![#EEEEEE](https://via.placeholder.com/10/EEEEEE?text=+) #EEEEEE | -->
 
 
 <!-- Env Variables -->
@@ -161,40 +146,50 @@ Maybe you can mention me or this repo in the acknowledgements too
 
 To run this project, you will need to add the following environment variables to your .env file
 
-`API_KEY`
+`GOOGLE_CLIENT_ID`
 
-`ANOTHER_API_KEY`
+`GOOGLE_CLIENT_SECRET`
+
+`NEXTAUTH_SECRET`
+
+`NEXTAUTH_URL`
+
+`REDIRECT_URI`
+
+`REFRESH_TOKEN`
+
+`NEXT_PUBLIC_APP_DOMAIN`
 
 <!-- Getting Started -->
 ## 	:toolbox: Getting Started
 
-<!-- Prerequisites -->
+<!-- Prerequisites
 ### :bangbang: Prerequisites
 
-This project uses Yarn as package manager
+This project uses npm as package manager
 
 ```bash
  npm install --global yarn
-```
+``` -->
 
 <!-- Installation -->
-### :gear: Installation
+<!-- ### :gear: Installation -->
 
-Install my-project with npm
+<!-- Install Email-Manager with npm
 
 ```bash
   yarn install my-project
   cd my-project
-```
+``` -->
    
 <!-- Running Tests -->
-### :test_tube: Running Tests
+<!-- ### :test_tube: Running Tests
 
 To run tests, run the following command
 
 ```bash
   yarn test test
-```
+``` -->
 
 <!-- Run Locally -->
 ### :running: Run Locally
@@ -202,36 +197,36 @@ To run tests, run the following command
 Clone the project
 
 ```bash
-  git clone https://github.com/Louis3797/awesome-readme-template.git
+  git clone https://github.com/Naresh-chandanbatve/email-manager.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd my-project
+  cd email-manager
 ```
 
 Install dependencies
 
 ```bash
-  yarn install
+  npm install
 ```
 
 Start the server
 
 ```bash
-  yarn start
+  npm run dev
 ```
 
 
 <!-- Deployment -->
-### :triangular_flag_on_post: Deployment
+<!-- ### :triangular_flag_on_post: Deployment
 
 To deploy this project run
 
 ```bash
   yarn deploy
-```
+``` -->
 
 
 <!-- Usage -->
@@ -249,17 +244,17 @@ function App() {
 ```
 
 <!-- Roadmap -->
-## :compass: Roadmap
+<!-- ## :compass: Roadmap
 
 * [x] Todo 1
-* [ ] Todo 2
+* [ ] Todo 2 -->
 
 
 <!-- Contributing -->
 ## :wave: Contributing
 
-<a href="https://github.com/Louis3797/awesome-readme-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Louis3797/awesome-readme-template" />
+<a href="https://github.com/Naresh-chandanbatve/email-manager/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Naresh-chandanbatve/email-manager" />
 </a>
 
 
@@ -271,7 +266,7 @@ See `contributing.md` for ways to get started.
 <!-- Code of Conduct -->
 ### :scroll: Code of Conduct
 
-Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-template/blob/master/CODE_OF_CONDUCT.md)
+Please read the [Code of Conduct](https://github.com/Naresh-chandanbatve/email-manager/blob/master/CODE_OF_CONDUCT.md)
 
 <!-- FAQ -->
 ## :grey_question: FAQ
@@ -288,18 +283,18 @@ Please read the [Code of Conduct](https://github.com/Louis3797/awesome-readme-te
 <!-- License -->
 ## :warning: License
 
-Distributed under the no License. See LICENSE.txt for more information.
+Distributed under the MIT License. See LICENSE.txt for more information.
 
 
 <!-- Contact -->
 ## :handshake: Contact
 
-Your Name - [@twitter_handle](https://twitter.com/twitter_handle) - email@email_client.com
+Naresh Chandanbatve - [@Nareshchandanb1](https://twitter.com/Nareshchandanb1) - chandanbatven@gmail.com
 
-Project Link: [https://github.com/Louis3797/awesome-readme-template](https://github.com/Louis3797/awesome-readme-template)
+Project Link: [https://github.com/Naresh-chandanbatve/email-manager](https://github.com/Naresh-chandanbatve/email-manager)
 
 
-<!-- Acknowledgments -->
+<!-- Acknowledgments
 ## :gem: Acknowledgements
 
 Use this section to mention useful resources and libraries that you have used in your projects.
@@ -308,4 +303,4 @@ Use this section to mention useful resources and libraries that you have used in
  - [Awesome README](https://github.com/matiassingers/awesome-readme)
  - [Emoji Cheat Sheet](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md#travel--places)
  - [Readme Template](https://github.com/othneildrew/Best-README-Template)
-
+ -->
