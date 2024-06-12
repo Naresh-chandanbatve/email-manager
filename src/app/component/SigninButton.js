@@ -27,11 +27,11 @@ const SigninButton = () => {
     return(
         <div className="flex flex-row justify-between">
         <div className=" flex flex-row justify-between gap-2" >
-         <Image src={session.user.image} alt="gmail_photo" width={50} height={50} className="rounded-full "/> 
-        <div className=" gap-0"> <p>{session.user.name}</p><p>{session.user.email}</p>
+         <Image src={session.user.image} alt="gmail_photo" width={50} height={50} className="rounded-full"/> 
+        <div className="h-fit"> <p>{session.user.name}</p><p>{session.user.email}</p>
         </div>
         </div>
-        <Button variant="bordered" onClick={handleSignOut} className="flex flex-row justify-between items-center border-2 rounded-xl py-0 sm:py-1 sm:right-0 sm:m-7 sm:absolute sm:top-0   "><IoMdLogOut size={20}/><p className="sm:hidden"> sign out</p></Button>
+        <Button variant="bordered" onClick={handleSignOut} className="flex flex-row justify-between items-center border-2 rounded-xl lg:py-2 py-1 right-0 m-7 lg:m-0 absolute top-0 lg:relative "><IoMdLogOut size={20}/><p className="hidden lg:block"> sign out</p></Button>
         </div>
     )
   }
