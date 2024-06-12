@@ -16,7 +16,7 @@ export default function Home() {
   const { data: session, status } = useSession();
   const {isLoading, setIsLoading} = useLoadingStore();
   const { isThreadOpened, setThreadOpened} = useThreadStore();
-  const [selectedThreadId, setSelectedThreadId] = useState(null); // Track selected thread ID
+  const [selectedThreadId, setSelectedThreadId] = useState(null); 
   const [selectedThreadDetails, setSelectedThreadDetails] = useState(null); 
   const [sender, setSender] = useState(null);
 
@@ -29,7 +29,6 @@ export default function Home() {
     // console.log(key)
     setThreadOpened();
     setSender(sender);
-    console.log(sender);
     setSelectedThreadId(key);
   }
 
@@ -39,8 +38,7 @@ export default function Home() {
       const fetchThreadDetails = async () => {
         try {
           const response = await axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/api/mail/details/${session.user.email}/${selectedThreadId}`); // Replace with your API endpoint
-          // const data = await response.json();
-          console.log(response.data);
+          
           setSelectedThreadDetails(response.data);
         } catch (error) {
           console.error('Error fetching thread details:', error);
@@ -66,7 +64,6 @@ export default function Home() {
               // console.log(thread)
         const sender = await axios.get(`${process.env.NEXT_PUBLIC_APP_DOMAIN}/api/mail/thread/${session.user.email}/${message.id}`);
             
-        console.log(sender.data);
             // return { ...thread, sender: sender.data || 'Unknown Sender' }; 
             return(sender.data)
           });
@@ -101,9 +98,9 @@ export default function Home() {
        {isThreadOpened &&
       <div className="fixed z-50 lg:w-[45vw] min-h-screen bg-gray-800 top-0 right-0 w-screen">
          <MdClose size={40} onClick={()=>setThreadOpened()} className="m-8 ml-auto"/>
-          <p className="p-14 sm:p-6">{sender}</p>
+          <p className="lg:p-14 p-6">{sender}</p>
           
-          <div className="h-[70vh] overflow-x-hidden lg:p-14 p-6 text-wrap w-[90-vw]">{selectedThreadDetails ? <h2>{selectedThreadDetails}</h2> : <div className="flex justify-center">loading...</div>}</div>
+          <div className="h-[70vh] overflow-x-hidden lg:p-14 p-6  w-[95%]">{selectedThreadDetails ? <h2>{selectedThreadDetails}</h2> : <div className="flex justify-center">loading...</div>}</div>
           {/* <p>{selectedThreadDetails.content}</p> */}
       </div>
       }
@@ -122,7 +119,7 @@ export default function Home() {
     {!isLoading ? 
       <ul>
         {threads && threads.map((thread) => (
-          <li key={thread.id} onClick={()=>handleClick(thread.id, thread.payload.headers.find(header => header.name === "From")?.value)} className="my-4 border-4 p-4 w-[65vw]">
+          <li key={thread.id} onClick={()=>handleClick(thread.id, thread.payload.headers.find(header => header.name === "From")?.value)} className="my-4 border-4 p-4 w-[65vw] hover:scale-[1.02] cursor-pointer duration-200">
             {thread.payload.headers.find(header => header.name === "From")?.value} <br />
             {thread.snippet}
           </li>
