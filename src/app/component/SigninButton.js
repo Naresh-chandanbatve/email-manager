@@ -13,10 +13,8 @@ const SigninButton = () => {
    const {isLoading, setIsLoading} = useLoadingStore();
    
    const handleSignOut = () => {
-    console.log("sign out");
-      setIsLoading(true);
+     setIsLoading(true);
      signOut(); 
-     setIsLoading(false);
     redirect('/');
   };
   

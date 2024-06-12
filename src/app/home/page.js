@@ -89,6 +89,7 @@ export default function Home() {
   }
 
   if (status === "unauthenticated") {
+    setIsLoading(false)
      redirect('/');
   }
 
