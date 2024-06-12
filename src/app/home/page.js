@@ -17,16 +17,19 @@ export default function Home() {
   const {isLoading, setIsLoading} = useLoadingStore();
   const { isThreadOpened, setThreadOpened} = useThreadStore();
   const [selectedThreadId, setSelectedThreadId] = useState(null); // Track selected thread ID
-  const [selectedThreadDetails, setSelectedThreadDetails] = useState(null); // Store fetched thread details
+  const [selectedThreadDetails, setSelectedThreadDetails] = useState(null); 
+  const [sender, setSender] = useState(null);
 
 
   const handleNumberChange = (event) => {
     setMaxResults(parseInt(event.target.value)); 
   };
 
-  const handleClick = (key) => {
-    console.log(key)
+  const handleClick = (key, sender) => {
+    // console.log(key)
     setThreadOpened();
+    setSender(sender);
+    console.log(sender);
     setSelectedThreadId(key);
   }
 
@@ -90,15 +93,16 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center  p-24">
+    <main className="flex min-h-screen flex-col items-center  lg:p-24 p-0 pt-14">
      
        <div className="mt-6 w-[65vw]">
        {/* <div className="flex flex-row justify-between"> */}
        {isThreadOpened &&
-      <div className="fixed w-[45vw] min-h-screen bg-gray-800 top-0 right-0">
+      <div className="fixed z-50 lg:w-[45vw] min-h-screen bg-gray-800 top-0 right-0 w-screen">
          <MdClose size={40} onClick={()=>setThreadOpened()} className="m-8 ml-auto"/>
-
-          {selectedThreadDetails ? <h2>{selectedThreadDetails}</h2> : <div>loading...</div>}
+          <p className="p-14 sm:p-6">{sender}</p>
+          
+          <div className="h-[70vh] overflow-x-hidden lg:p-14 p-6 text-wrap w-[90-vw]">{selectedThreadDetails ? <h2>{selectedThreadDetails}</h2> : <div className="flex justify-center">loading...</div>}</div>
           {/* <p>{selectedThreadDetails.content}</p> */}
       </div>
       }
@@ -117,7 +121,7 @@ export default function Home() {
     {!isLoading ? 
       <ul>
         {threads && threads.map((thread) => (
-          <li key={thread.id} onClick={()=>handleClick(thread.id)} className="my-4 border-4 p-4 w-[65vw]">
+          <li key={thread.id} onClick={()=>handleClick(thread.id, thread.payload.headers.find(header => header.name === "From")?.value)} className="my-4 border-4 p-4 w-[65vw]">
             {thread.payload.headers.find(header => header.name === "From")?.value} <br />
             {thread.snippet}
           </li>

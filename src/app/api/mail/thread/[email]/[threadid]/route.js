@@ -22,7 +22,6 @@ export async function GET(Request, { params }) {
         const {token} = await oAuth2Client.getAccessToken();
         const config = createConfig(url, token);
         const response = await axios(config);
-        console.log(response.data)
         return new Response(JSON.stringify(response.data)); 
     //    return new Response(response.data.payload.headers.find(header => header.name === "From")?.value);        
     } catch (error) {
