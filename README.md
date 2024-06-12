@@ -66,7 +66,6 @@ Maybe you can mention me or this repo in the acknowledgements too
   - [:eyes: Usage](#eyes-usage)
   - [:wave: Contributing](#wave-contributing)
     - [:scroll: Code of Conduct](#scroll-code-of-conduct)
-  - [:grey\_question: FAQ](#grey_question-faq)
   - [:warning: License](#warning-license)
   - [:handshake: Contact](#handshake-contact)
 
@@ -269,7 +268,7 @@ See `contributing.md` for ways to get started.
 Please read the [Code of Conduct](https://github.com/Naresh-chandanbatve/email-manager/blob/master/CODE_OF_CONDUCT.md)
 
 <!-- FAQ -->
-## :grey_question: FAQ
+<!-- ## :grey_question: FAQ
 
 - Question 1
 
@@ -277,7 +276,7 @@ Please read the [Code of Conduct](https://github.com/Naresh-chandanbatve/email-m
 
 - Question 2
 
-  + Answer 2
+  + Answer 2 -->
 
 
 <!-- License -->
