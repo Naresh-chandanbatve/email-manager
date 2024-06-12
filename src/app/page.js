@@ -21,7 +21,7 @@ export default function Home() {
         <p className="mb-6 text-slate-300 text-xl">
           Let&apos;s classify the <br/> Avalanche of your Emails
         </p>
-       <Image src={gmail} alt="gmail logo"  className="lg:mb-14 mb-10 lg:ml-0 ml-[8vw] lg:w-72 w-40 "/>
+       <Image src={gmail} alt="gmail logo"  className="lg:mb-14 mb-10 lg:ml-0 lg:w-72 w-50 "/>
        <SigninBox className="mb-12"/>
        </div>
     </main>

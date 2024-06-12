@@ -19,9 +19,9 @@ const handleSubmit = async (e) => {
 
   };
 
-  return <form onSubmit={handleSubmit} className="flex flex-col w-[20vw]">
-    <input type="text" name="openapi" placeholder="Enter your OpenAPI key here" value={inputValue} onChange={(e) => setInputValue(e.target.value)} className="my-3 px-4 text-black rounded-md w-[58vw] lg:w-full" required></input>
-    <button type="submit" className="text-white bg-blue-700 rounded-lg py-2 w-[58vw] lg:w-full"> sign in </button>
+  return <form onSubmit={handleSubmit} className="flex flex-col w-[60vw] lg:w-[20vw] ">
+    <input type="text" name="openapi" placeholder="Enter your OpenAPI key here" value={inputValue} onChange={(e) => setInputValue(e.target.value)} className="my-3 px-4 text-black rounded-md w-[60vw] lg:w-full" required></input>
+    <button type="submit" className="text-white bg-blue-700 rounded-lg py-2 w-[60vw] lg:w-full"> sign in </button>
     </form>
 }
 
