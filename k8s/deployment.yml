@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: email-manager-deployment
+  labels:
+    app: email-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: email-manager
+  template:
+    metadata:
+      labels:
+        app: email-manager
+    spec:
+      containers:
+      - name: email-manager
+        image: nareshchandanbatve/email-manager:latest
+        ports:
+        - containerPort: 3000
