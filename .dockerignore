@@ -3,7 +3,8 @@
 .dockerignore
 README.md
 LICENSE.txt
-
+/k8s
+/terraform
 
 /node_modules
 /.pnp
