@@ -40,7 +40,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 </p>
    
 <h4>
-    <a href="https://github.com/Naresh-chandanbatve/email-manager/">View Demo</a>
+    <a href="https://email-manager-pi.vercel.app/">View Demo</a>
   <span> · </span>
     <a href="https://github.com/Naresh-chandanbatve/email-manager">Documentation</a>
   <span> · </span>
@@ -61,9 +61,10 @@ Maybe you can mention me or this repo in the acknowledgements too
     - [:space\_invader: Tech Stack](#space_invader-tech-stack)
     - [:dart: Features](#dart-features)
     - [:key: Environment Variables](#key-environment-variables)
-  - [:toolbox: Getting Started](#toolbox-getting-started)
+  - [:toolbox: Installation](#toolbox-installation)
     - [:running: Run Locally](#running-run-locally)
-  - [:eyes: Usage](#eyes-usage)
+    - [:running: Run the Docker Image](#running-run-the-docker-image)
+      - [:page\_with\_curl: Note:](#page_with_curl-note)
   - [:wave: Contributing](#wave-contributing)
     - [:scroll: Code of Conduct](#scroll-code-of-conduct)
   - [:warning: License](#warning-license)
@@ -79,7 +80,7 @@ Maybe you can mention me or this repo in the acknowledgements too
 ### :camera: Screenshots
 
 <div align="center"> 
-  <img src="https://placehold.co/600x400?text=Your+Screenshot+here" alt="screenshot" />
+  <img src="./assets/screenshot.png" alt="screenshot" />
 </div>
 
 
@@ -160,7 +161,7 @@ To run this project, you will need to add the following environment variables to
 `NEXT_PUBLIC_APP_DOMAIN`
 
 <!-- Getting Started -->
-## 	:toolbox: Getting Started
+## 	:toolbox: Installation
 
 <!-- Prerequisites
 ### :bangbang: Prerequisites
@@ -218,6 +219,26 @@ Start the server
 ```
 
 
+### :running: Run the Docker Image
+
+You can also run the Docker Image to get started easily.
+get the Docker Image by running the following command
+
+```bash
+  docker pull nareshchandanbatve/email-manager:latest
+```
+
+Run the docker image by running the following command
+
+```bash
+  docker run -p 3000:3000 --env-file ./.env nareshchandanbatve/email-manager:latest
+```
+
+#### :page_with_curl: Note: 
+you must have the .env file with all the environment variables listed above
+
+
+
 <!-- Deployment -->
 <!-- ### :triangular_flag_on_post: Deployment
 
@@ -229,9 +250,9 @@ To deploy this project run
 
 
 <!-- Usage -->
-## :eyes: Usage
+<!-- ## :eyes: Usage -->
 
-Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
+<!-- Use this space to tell a little more about your project and how it can be used. Show additional screenshots, code samples, demos or link to other resources.
 
 
 ```javascript
@@ -240,7 +261,7 @@ import Component from 'my-project'
 function App() {
   return <Component />
 }
-```
+``` -->
 
 <!-- Roadmap -->
 <!-- ## :compass: Roadmap
@@ -259,7 +280,7 @@ function App() {
 
 Contributions are always welcome!
 
-See `contributing.md` for ways to get started.
+See `CONRIBUTING.md` for ways to get started.
 
 
 <!-- Code of Conduct -->
