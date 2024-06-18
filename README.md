@@ -63,8 +63,10 @@ Maybe you can mention me or this repo in the acknowledgements too
     - [:key: Environment Variables](#key-environment-variables)
   - [:toolbox: Installation](#toolbox-installation)
     - [:running: Run Locally](#running-run-locally)
-    - [:running: Run the Docker Image](#running-run-the-docker-image)
+    - [:whale: Run the Docker Image](#whale-run-the-docker-image)
       - [:page\_with\_curl: Note:](#page_with_curl-note)
+  - [:hammer\_and\_wrench: Recreate the Infrastructure on AWS using Terraform](#hammer_and_wrench-recreate-the-infrastructure-on-aws-using-terraform)
+      - [AWS Resources that will be created:](#aws-resources-that-will-be-created)
   - [:wave: Contributing](#wave-contributing)
     - [:scroll: Code of Conduct](#scroll-code-of-conduct)
   - [:warning: License](#warning-license)
@@ -117,7 +119,7 @@ Maybe you can mention me or this repo in the acknowledgements too
   <ul>
     <li><a href="https://www.docker.com/">Docker</a></li>
     <li><a href="https://www.jenkins.io/">Jenkins</a></li>
-    <li><a href="https://circleci.com/">erraform</a></li>
+    <li><a href="https://www.terraform.io/">Terraform</a></li>
   </ul>
 </details>
 
@@ -219,7 +221,7 @@ Start the server
 ```
 
 
-### :running: Run the Docker Image
+### :whale: Run the Docker Image
 
 You can also run the Docker Image to get started easily.
 get the Docker Image by running the following command
@@ -239,6 +241,44 @@ you must have the .env file with all the environment variables listed above
 
 
 
+## :hammer_and_wrench: Recreate the Infrastructure on AWS using Terraform 
+
+prerequisites:
+  - you must have the aws IAM account with required permissions
+  - you must have Terraform installed on your machine
+
+All the Terraform code is available in /terraform directory so go to /terraform directory
+
+Add all the environment variables listed above in the variables.tf file as shown in the varaibles.example.tf file
+
+Then run the following command to intialize terraform
+
+```bash 
+  terraform init
+```
+
+Then run the following command it may prompt errors, fix them if any.
+
+```bash 
+  terraform plan
+```
+
+Then run and type 'yes' when prompted. 
+
+```bash 
+  terraform apply
+```
+
+Now you have your infrastructure ready with docker image of this application running on the ec2 server.
+
+#### AWS Resources that will be created:
+
+- EC2 instance
+- Custom VPC
+- Security Group with allowing all ingress and egress port (warning: It can be security vulnerability, I am allowing all ports for development only allow only ports that are needed for production)
+- Subnet
+- Internet Gateway
+- Routing Table
 <!-- Deployment -->
 <!-- ### :triangular_flag_on_post: Deployment
 
