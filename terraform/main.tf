@@ -1,5 +1,5 @@
 resource "aws_instance" "test-instance" {
-  ami           = "ami-0e1d06225679bc1c5"  # amazon linux
+  ami           = "ami-0e1d06225679bc1c5"  # amazon linux 
   instance_type = "t2.micro"
   # key_name      = "test"  # SSH key pair
   vpc_security_group_ids = [ aws_security_group.allow_all.id]
