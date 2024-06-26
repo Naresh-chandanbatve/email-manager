@@ -45,18 +45,24 @@ oAuth2Client.setCredentials({refresh_token: process.env.REFRESH_TOKEN});
 export async function GET(Request, { params }) {
     try {
         const url = `https://gmail.googleapis.com/gmail/v1/users/${params.email}/messages/${params.threadid}`;
+        // console.log(params.threadid)
         const {token} = await oAuth2Client.getAccessToken();
         const config = createConfig(url, token);
         const response = await axios(config);
-        // const decodedContent = atob(messagePartBody.data);
-        const res = atob( response.data.payload.parts[0].body.data.replace(/-/g, '+').replace(/_/g, '/')); 
+        // console.log(JSON.stringify(response.data))
+
+        const res = JSON.stringify(atob(response.data.payload.parts[0].body.data.replace(/-/g, '+').replace(/_/g, '/')));
+        // const res = atob( response.data.payload.parts[0].body.data.replace(/-/g, '+').replace(/_/g, '/')); 
+        
         // const res = ((JSON.stringify(atob(response.data.payload.parts[0].body.data))));
        
        return new Response(res);
     //    return new Response(response.data.messages[0].payload.headers.find(header => header.name === "From")?.value);        
     } catch (error) {
         console.log(error);
-        return new Response(JSON.stringify({ message: error.message }), { status: 500 });
+        // const res = atob( response.data.payload.parts[0].body.data.replace(/-/g, '+').replace(/_/g, '/'));
+        return new Response(res);
+        // return new Response(JSON.stringify({ message: error.message }), { status: 500 });
 
     }
 
