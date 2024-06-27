@@ -54,7 +54,7 @@ export async function GET(Request, { params }) {
       : response.data.payload.parts[0].parts.find(part => part.mimeType === 'text/html').body.data;
 
             // const res = JSON.stringify(response.data.payload.parts[0].parts.find(part => part.mimeType === 'text/html').body.data);
-        const res = JSON.stringify(atob(body.replace(/-/g, '+').replace(/_/g, '/')));
+        const res = atob(body.replace(/-/g, '+').replace(/_/g, '/'));
         // const res = atob( response.data.payload.parts[0].body.data.replace(/-/g, '+').replace(/_/g, '/')); 
         
         // const res = ((JSON.stringify(atob(response.data.payload.parts[0].body.data))));

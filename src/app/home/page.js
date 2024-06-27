@@ -13,7 +13,7 @@ import {Button} from "@nextui-org/button";
 
 export default function Home() {
   const [threads, setThreads] = useState([]);
-  const [maxResults, setMaxResults] = useState(3);
+  const [maxResults, setMaxResults] = useState(10);
   const { data: session, status } = useSession();
   const {isLoading, setIsLoading} = useLoadingStore();
   const { isThreadOpened, setThreadOpened} = useThreadStore();
@@ -128,7 +128,7 @@ export default function Home() {
          <MdClose size={40} onClick={()=>{setThreadOpened(); setSelectedThreadDetails(null);}} className="m-8 ml-auto"/>
           <p className="lg:p-14 p-6">{sender}</p>
           
-          <div className="h-[70vh] overflow-x-hidden lg:p-14 p-6  w-[95%]">{selectedThreadDetails ? <h2>{selectedThreadDetails}</h2> : <div className="flex justify-center">loading...</div>}</div>
+          <div className="h-[70vh] overflow-x-hidden lg:p-14 p-6  w-[95%]">{selectedThreadDetails ? <h2><div dangerouslySetInnerHTML={{ __html: selectedThreadDetails }} /></h2> : <div className="flex justify-center">loading...</div>}</div>
           {/* <p>{selectedThreadDetails.content}</p> */}
       </div>
       }
