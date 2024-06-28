@@ -49,8 +49,8 @@ export async function GET(Request, { params }) {
         const config = createConfig(url, token);
         const response = await axios(config);
 
-        const body = response.data.payload.parts.find(part => part.mimeType === 'text/plain')
-      ? response.data.payload.parts.find(part => part.mimeType === 'text/plain').body.data
+        const body = response.data.payload.parts.find(part => part.mimeType === 'text/html')
+      ? response.data.payload.parts.find(part => part.mimeType === 'text/html').body.data
       : response.data.payload.parts[0].parts.find(part => part.mimeType === 'text/html').body.data;
 
             // const res = JSON.stringify(response.data.payload.parts[0].parts.find(part => part.mimeType === 'text/html').body.data);
